@@ -1,29 +1,30 @@
 <template>
-<div class="container">
-    <div class="imgContainer" :style="{ backgroundImage: `url(${props.imgUrl})` }">
+<div class="container" :style="{ backgroundImage: `url(${imgUrl})` }" >
 
     </div>
-</div>
+
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
+import {
+    defineProps
+} from 'vue';
+
 const props = defineProps({
     imgUrl: {
-        type: String,
-        required: true
+        type: String
     }
 })
 </script>
 
 <style scoped>
-
-.imgContainer {
+.container {
     width: 100%;
-    height: 20vh;
-    background-repeat: no-repeat;
-    background-size: contain;
+    height: 100%;
+    /* background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShNkLyeMrt5tv9dc_icYO_VYcNZ0g7Z1GJlw&usqp=CAU');  */
+    background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 
 }
 </style>
