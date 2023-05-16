@@ -1,9 +1,8 @@
 <template>
-<div class="container">
     <div class="imgContainer" :style="{ backgroundImage: `url(${props.imgUrl})` }">
-
+        
     </div>
-</div>
+
 </template>
 
 <script setup>
@@ -20,10 +19,13 @@ const props = defineProps({
 
 .imgContainer {
     width: 100%;
-    height: 20vh;
+    height: 100%;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
-
+    background-color: rgb(240, 201, 201);
+    object-fit: cover;
+    
 }
+
 </style>
