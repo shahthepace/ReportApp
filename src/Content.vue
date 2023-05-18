@@ -6,18 +6,19 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
+import {
+    defineProps
+} from 'vue';
+
 const props = defineProps({
     imgUrl: {
-        type: String,
-        required: true
+        type: String
     }
 })
 </script>
 
 <style scoped>
-
-.imgContainer {
+.container {
     width: 100%;
     height: 100%;
     background-size: contain;
