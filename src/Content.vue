@@ -20,11 +20,10 @@ const props = defineProps({
 .imgContainer {
     width: 100%;
     height: 100%;
+    background-size: contain;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-color: rgb(240, 201, 201);
-    object-fit: cover;
+    background-position: left;
+    object-fit: contain;
     
 }
 
