@@ -29,12 +29,17 @@
         </div>
     </div>
         <div class="container">
-            <div class="beautify">
+            <div class="headingElems" style="display: flex;">
+            <div class="beautify" style="flex: 8;">
                 <a href="https://jsonformatter.org/xml-formatter" target="_blank" style="color: #007bff; text-decoration: none; font-weight: bold; border-bottom: 2px solid #007bff;">Beautify</a>
             </div>
             <!-- a copy button that copies the code inside -->
+            <div class="copy" style="flex:1">
+                <button class="btn btn-primary" @click="methods.copy" style="background-color: #007bff; border-color: #007bff; border-radius: 2px; color: #fff; font-size: 16px;">Copy</button>
+            </div>
+        </div>
         <div class="contentsContainer">
-            <div v-for="(item,index) in state.selected" :key="index">
+            <div id="code" v-for="(item,index) in state.selected" :key="index">
                 <p>{{(item.get_code().code)}}</p>
             </div>
         </div>
@@ -324,7 +329,7 @@ const state = reactive({
             imgUrl: "https://i.ibb.co/9qNxtt6/image.png",
             get_code:function(){
                 const dummyCounter=0;
-                return { code: `    <param name="AEXPORT" order="${getCurrentCounter()}">
+                return { code: ` <param name="AEXPORT" order="${getCurrentCounter()}">
         <component clazz="ca.jri.reports.component.common.EntryComponent" type="list"
                           required="true" description="Export">
             <init-param>
@@ -343,7 +348,12 @@ const state = reactive({
 const methods = {
     log(event) {
         currectCounter=1;
-    }
+    },
+   copy(){
+         var copyText = document.getElementById("code").innerText;
+        //  copy copyText to clip board
+        navigator.clipboard.writeText(copyText);
+    },
 }
 </script>
 
