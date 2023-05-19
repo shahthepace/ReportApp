@@ -1,6 +1,6 @@
 <template>
 <div>
-    <h1>App</h1>
+    <h1 style="color: #a8774c; font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem;">Report Structure Generator</h1>
     <div class="wrapper">
         <div class="container">
             <div class="label-allDraggable">
@@ -31,11 +31,11 @@
         <div class="container">
             <div class="headingElems" style="display: flex;">
             <div class="beautify" style="flex: 8;">
-                <a href="https://jsonformatter.org/xml-formatter" target="_blank" style="color: #007bff; text-decoration: none; font-weight: bold; border-bottom: 2px solid #007bff;">Beautify</a>
+                <a href="https://jsonformatter.org/xml-formatter" target="_blank" style="color: #a8774c;; text-decoration: none; font-weight: bold; border-bottom: 2px solid #a8774c;;">Beautify</a>
             </div>
             <!-- a copy button that copies the code inside -->
             <div class="copy" style="flex:1">
-                <button class="btn btn-primary" @click="methods.copy" style="background-color: #007bff; border-color: #007bff; border-radius: 2px; color: #fff; font-size: 16px;">Copy</button>
+                <button class="btn btn-primary" @click="methods.copy" style="background-color:  #a8774c; border-color: green; border-radius: 2px; color: #fff; font-size: 16px;">Copy</button>
             </div>
         </div>
         <div class="contentsContainer">
@@ -358,6 +358,10 @@ const methods = {
 </script>
 
 <style scoped>
+label{
+    color: #a8774c;
+    font-weight: bold;
+}
 .wrapper {
     width: 100vw;
     height: 100vh;
@@ -377,4 +381,6 @@ const methods = {
     height: 150px;
     margin-bottom: 10px;
 }
+
+
 </style>
