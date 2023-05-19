@@ -350,9 +350,12 @@ const methods = {
         currectCounter=1;
     },
    copy(){
-         var copyText = document.getElementById("code").innerText;
+        var temp="";
+         document.querySelectorAll("#code").forEach((x)=>{
+            temp+=x.innerText+"\n";
+         })
         //  copy copyText to clip board
-        navigator.clipboard.writeText(copyText);
+        navigator.clipboard.writeText(temp);
     },
 }
 </script>
