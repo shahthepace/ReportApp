@@ -2,6 +2,10 @@
 <div>
     <h1>App</h1>
     <div class="wrapper">
+        <div class="container">
+            <div class="label-allDraggable">
+                <label >Drag all the contents from here</label>
+            </div>
         <div class="contentsContainer" @change="methods.log">
             <VueDraggableNext group="grp" :list="state.data">
                 <div class="contentContainer" v-for="(data,index) in state.data">
@@ -9,7 +13,13 @@
                 </div>
             </VueDraggableNext>
         </div>
+    </div>
+        <div class="container">
+            <div class="drag">
+                <label >Drop the content here [----]</label>
+            </div>
         <div class="contentsContainer" @change="methods.log">
+           
             <VueDraggableNext group="grp" :list="state.selected">
                 <div class="contentContainer" v-for="(data,index) in state.selected">
                     <Content :imgUrl="data.imgUrl" />
@@ -17,11 +27,17 @@
             </VueDraggableNext>
 
         </div>
+    </div>
+        <div class="container">
+            <div class="beautify">
+                <a href="https://jsonformatter.org/xml-formatter" target="_blank" style="color: #007bff; text-decoration: none; font-weight: bold; border-bottom: 2px solid #007bff;">Beautify</a>
+            </div>
+            <!-- a copy button that copies the code inside -->
         <div class="contentsContainer">
             <div v-for="(item,index) in state.selected" :key="index">
                 <p>{{(item.get_code().code)}}</p>
             </div>
-
+        </div>
         </div>
 
     </div>
