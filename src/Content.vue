@@ -1,6 +1,6 @@
 <template>
-    <div class="imgContainer" :style="{ backgroundImage: `url(${props.imgUrl})` }">
-        
+<div class="container" :style="{ backgroundImage: `url(${imgUrl})` }" >
+
     </div>
 
 </template>

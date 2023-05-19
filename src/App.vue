@@ -38,10 +38,14 @@ import {
 } from 'vue-draggable-next'
 
 import Content from './Content.vue';
-let currectCounter = 1;
+let num=1;
+let currectCounter = num.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
 
 const getCurrentCounter = () => {
-    return currectCounter++;
+    // increment the currentCounter
+    let temp=parseInt(currectCounter)+1;
+    currectCounter = temp.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
+    return currectCounter;
 }
 
 const state = reactive({
@@ -315,28 +319,7 @@ const state = reactive({
     </param>`
             
         }}},
-        {
-            id: 5,
-            type: "ViewOptions",
-            imgUrl: "https://i.ibb.co/4ZWbcFF/image.png",
-            get_code:function(){
-                const dummyCounter=0;
-                return {code: `<param name="ALOCALECDE" order="${getCurrentCounter()}">
-        <component clazz="ca.jri.reports.component.common.EntryComponent" type="static"
-                   value="en_US" />
-    </param>
-    <param name="sysDate" order="${getCurrentCounter()}">
-        <component clazz="ca.jri.reports.component.common.EntryComponent" type="static"
-                   value="$sysdate$" />
-    </param>
-    <param name="LOGOCOMPANY" order="${getCurrentCounter()}">
-        <component clazz="ca.jri.reports.component.common.EntryComponent" type="static"
-                   value="22">
-        </component>
-    </param>`
-                }
-            }
-        }
+        
     ],
     selected: []
 })
